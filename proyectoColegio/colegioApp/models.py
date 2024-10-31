@@ -8,10 +8,10 @@ class Colegio(models.Model):
     def _str_(self):
         return self.nombre
 
-class Trabajador(models.Model):
+class Profesor(models.Model):
     nombre = models.CharField(max_length=100)
     antiguedad = models.PositiveIntegerField()
-    empresa = models.ForeignKey(Empresa, related_name='trabajadores', on_delete=models.CASCADE)
+    colegio = models.ForeignKey(Colegio, related_name='profesores', on_delete=models.CASCADE)
 
     def _str_(self):
         return self.nombre

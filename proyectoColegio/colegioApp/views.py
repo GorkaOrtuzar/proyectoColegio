@@ -3,27 +3,26 @@ from django.shortcuts import render
 from .models import Colegio
 
 # Create your views here.
+
+
+## TENEIS QUE HACER 6 VISTAS (1 MAS OPCIONAL)
+
+## 1 VISTA DE DETALLE DE COLEGIO Y UNA VISTA DE LISTA DE TODOS LOS COLEGIOS 
+## 1 VISTA DE DETALLE DE PROFESOR Y UNA VISTA DE LISTA DE TODOS LOS PROFESORES 
+## 1 VISTA DE DETALLE DE CIUDAD Y UNA VISTA DE LISTA DE TODOS LOS CIUDAD 
+
+
+## OPCIONAL 
+
+### INDEX VISTA --> PARA PODER ELEGIR CUALQUIERA DE LAS 3 VISTA DE LISTA 
+
+
+
 def index(request):
     return HTTPResponse('primera vista')
 
-def listaColegios(request):
-    colegios = Colegio.objects.order_by('nombre')
-    nombre_colegios = ','.join([colegio.nombre for coelgio in colegios])
-    return HTTPResponse(nombre_colegios)
+def listaColes(request):
+    coles = Colegio.objects.order_by('nombre')
+    #contexto = {'coles' = coles}
+    #return render('listaColes.html', contexto, request )
 
-def detalleColegios(request, id_colegio):
-    try:
-        colegio = Colegio.objects.get(pk=id_colegio)
-        trabajadores = colegio.trabajadores.all()
-
-        cadenaDeTexto = f"{colegio.nombre} - CIF: {colegio.cif}\n"
-
-        if trabajadores.exists():
-            cadenaDeTexto += "Trabajadores:\n"
-            for trabajador in trabajadores:
-                cadenaDeTexto += f"{trabajador.nombre}, Antigüedad: {trabajador.antiguedad} años"
-        else:
-            cadenaDeTexto += "No hay trabajadores asociados a esta empresa"
-        return HTTPResponse(cadenaDeTexto)
-    except Colegio.DoesNotExist:
-        return HTTPResponse("Empresa no encontrada")
