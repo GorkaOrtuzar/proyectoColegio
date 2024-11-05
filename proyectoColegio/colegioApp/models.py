@@ -1,17 +1,28 @@
 from django.db import models
 
 # Create your models here.
+
+class Ciudad(models.Model):
+    id = models.CharField(max_length=9)
+    nombre = models.CharField(max_length=100)
+    codigoPostal = models.IntegerField(max_length=5)
+    provincia = models.CharField(max_length=50)
+    pais = models.CharField(max_length=50)
+
 class Colegio(models.Model):
+    id = models.CharField(max_length=9)
     nombre = models.CharField(max_length=100)
-    cif = models.CharField(max_length=9)
+    ubi = models.CharField(max_length=100)
+    cursoMin = models.CharField(max_length=50)
+    cursoMax = models.CharField(max_length=50)
+    modeloEstudio = models.CharField(max_length=1)
+   
 
-    def _str_(self):
-        return self.nombre
-
+   
 class Profesor(models.Model):
+    dni = models.CharField(max_length=9)
     nombre = models.CharField(max_length=100)
+    fechaNac = models.DateTimeField()
     antiguedad = models.PositiveIntegerField()
-    colegio = models.ForeignKey(Colegio, related_name='profesores', on_delete=models.CASCADE)
 
-    def _str_(self):
-        return self.nombre
+   
