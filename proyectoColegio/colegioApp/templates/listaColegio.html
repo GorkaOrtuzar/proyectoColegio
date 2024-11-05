@@ -1,0 +1,8 @@
+{% for colegio in colegio_list%}
+
+<h1> {{ colegio.nombre }}</h1>
+<p> {{ colegio.ubi}}</p>
+
+<a href="{% url 'detalleColes' colegio.id%}">Ver detalle de {{ colegio.nombre}}</a>
+
+{% endfor %}

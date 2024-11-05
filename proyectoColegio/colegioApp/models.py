@@ -3,22 +3,17 @@ from django.db import models
 # Create your models here.
 
 class Ciudad(models.Model):
-    id = models.CharField(max_length=9)
-    nombre = models.CharField(max_length=100)
-    codigoPostal = models.IntegerField(max_length=5)
+    codigoPostal = models.IntegerField()
     provincia = models.CharField(max_length=50)
     pais = models.CharField(max_length=50)
 
 class Colegio(models.Model):
-    id = models.CharField(max_length=9)
     nombre = models.CharField(max_length=100)
     ubi = models.CharField(max_length=100)
     cursoMin = models.CharField(max_length=50)
     cursoMax = models.CharField(max_length=50)
     modeloEstudio = models.CharField(max_length=1)
-    Ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE , related_name="colegio")   
-
-   
+    Ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE , related_name="colegio", null=True)   
 
    
 class Profesor(models.Model):

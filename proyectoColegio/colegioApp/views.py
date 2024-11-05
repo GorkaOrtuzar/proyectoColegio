@@ -1,6 +1,6 @@
 from http.client import HTTPResponse
-from django.shortcuts import render
-from .models import Colegio
+from django.shortcuts import render, get_object_or_404
+from .models import Colegio,Profesor,Ciudad
 
 # Create your views here.
 
@@ -26,43 +26,76 @@ def listaColes(request):
     cadenaDeTexto = ', '.join([e.nombre for e in coles])
     return HTTPResponse(cadenaDeTexto)
 
+def listaCiudad(request):
+    ciudades = Ciudad.objects.order_by('nombre')
+    cadenaDeTexto = ', '.join([e.nombre for e in ciudades])
+    return HTTPResponse(cadenaDeTexto)
+
 def listaProfes(request):
-    profesores = Profesor.objects.all()
-    cadenaDeTexto = "Lista de Trabajadores:\n"
+    profes = Profesor.objects.order_by('nombre')
+    cadenaDeTexto = ', '.join([e.nombre for e in profes])
+    return HTTPResponse(cadenaDeTexto)
 
-    if profesores.exists():
-        for profesor in profesores:
-            cadenaDeTexto += (
-                f"- ID: {profesor.id}, "
-                f"Nombre: {profesor.nombre}, "
-                f"Fecha de Nacimiento: {profesor.fecha_nacimiento}, "
-                f"Antigüedad: {profesor.antiguedad} años, "
-                f"Asignaturas: {profesor.asignaturas}\n"
-            )
-    else:
-        cadenaDeTexto += "No hay profesores registrados."
-    return HttpResponse(cadenaDeTexto) 
-
-def detalleColegio(request, id_colegio):
-    colegio = get_object_or_404(Colegio, pk=id_colegio)
-    profesores = colegio.profesores.all()
-    cadenaDeTexto = f"{colegio.nombre}\n"
-    cadenaDeTexto += "Trabajadores:\n"
-
-    if profesores.exists():
-        for profesor in profesores:
-            cadenaDeTexto += f"- {profesor.nombre}, Antigüedad: {profesor.antiguedad} años\n"
-    else:
-        cadenaDeTexto += "No hay profesores asociados a esta colegio."
-    return HttpResponse(cadenaDeTexto)
 
 def index(request):
     return render(request, 'index.html')
 
-def listaTrabajadores2(request):
-    trabajadores = Trabajador.objects.order_by('nombre')
-    contexto = {'lista_trabajadores': trabajadores}
-    return render(request, 'listaT.html', contexto)
+
+def detalleCiudad(request, id_ciudad):
+    ciudad = get_object_or_404(Ciudad, pk=id_ciudad)
+    contexto = {'ciudad': ciudad}
+    return render(request, 'detalleCiudad.html', contexto)
+
+
+def detalleCiudadConPlantillas(request, id_ciudad):
+    ciudad = get_object_or_404(Ciudad, pk=id_ciudad)
+    contexto = {'ciudad': ciudad}
+    return render(request, 'detalleCiudad.html', contexto)
+
+
+def detalleColegioConPlantillas(request, id_colegio):
+    colegio = get_object_or_404(Colegio, pk=id_colegio)
+    contexto = {'colegio': colegio}
+    return render(request, 'detalle.html', contexto)
+
+def detalleProfesorConPlantillas(request, id_profesor):
+    profesor = get_object_or_404(Profesor, pk=id_profesor)
+    contexto = {'profesor': profesor}
+    return render(request, 'detalle.html', contexto)
+
+
+
+
+
+
+##esta de aqui abajo funciona LAS HA HECHO ASIER 
+
+def listaColegioConPlantillas(request):
+    colegios = Colegio.objects.order_by('nombre')
+    contexto = {'colegio_list': colegios}
+    return render(request, 'listaColegio.html', contexto)
+
+
+
+def detalleColegioPlantillasAsier(request, id_colegio):
+    colegio = get_object_or_404(Colegio, pk=id_colegio)
+    contexto = {'colegio': colegio}
+    return render(request, 'detalleColegio.html', contexto)
+
+
+##hasta aqui abajo funciona LAS HA HECHO ASIER 
+
+
+
+
+
+def detalle(request, nombre_colegio):
+    return HttpResponse(f"Consultando el colegio {nombre_colegio}.")
+
+
+def nosehacerviews(request, id_colegio):
+    return HttpResponse(f"Información del colegio con ID = {id_colegio}.")
+
 
 
 
