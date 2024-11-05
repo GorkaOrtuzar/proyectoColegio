@@ -11,7 +11,6 @@ from .models import Colegio,Profesor,Ciudad
 ## 1 VISTA DE DETALLE DE PROFESOR Y UNA VISTA DE LISTA DE TODOS LOS PROFESORES 
 ## 1 VISTA DE DETALLE DE CIUDAD Y UNA VISTA DE LISTA DE TODOS LOS CIUDAD 
 
-
 ## OPCIONAL 
 
 ### INDEX VISTA --> PARA PODER ELEGIR CUALQUIERA DE LAS 3 VISTA DE LISTA 
@@ -63,11 +62,6 @@ def detalleProfesorConPlantillas(request, id_profesor):
     contexto = {'profesor': profesor}
     return render(request, 'detalle.html', contexto)
 
-
-
-
-
-
 ##esta de aqui abajo funciona LAS HA HECHO ASIER 
 
 def listaColegioConPlantillas(request):
@@ -75,19 +69,33 @@ def listaColegioConPlantillas(request):
     contexto = {'colegio_list': colegios}
     return render(request, 'listaColegio.html', contexto)
 
-
-
 def detalleColegioPlantillasAsier(request, id_colegio):
     colegio = get_object_or_404(Colegio, pk=id_colegio)
     contexto = {'colegio': colegio}
     return render(request, 'detalleColegio.html', contexto)
-
-
 ##hasta aqui abajo funciona LAS HA HECHO ASIER 
 
 
+def listaProfesConPlantillas(request):
+    profesores = Profesor.objects.order_by('nombre')
+    contexto = {'profesor_list' : profesores}
+    return render(request, 'listaProfesor.html', contexto)
+
+def detalleProfesorConPlantillas(request, id_profesor):
+    profesor = get_object_or_404(Profesor, pk=id_profesor)
+    contexto = {'profesor': profesor}
+    return render(request, 'detalleProfesor.html', contexto)
 
 
+def listaCiudadConPlantillas(request):
+    ciudad = Ciudad.objects.order_by('nombre')
+    contexto = {'ciudad_list' : ciudad}
+    return render(request, 'listaCiudad.html', contexto)
+
+def detalleCiudadConPlantillas(request, id_ciudad):
+    ciudad = get_object_or_404(Profesor, pk=id_ciudad)
+    contexto = {'ciudad': ciudad}
+    return render(request, 'detalleCiudad.html', contexto)
 
 def detalle(request, nombre_colegio):
     return HttpResponse(f"Consultando el colegio {nombre_colegio}.")
