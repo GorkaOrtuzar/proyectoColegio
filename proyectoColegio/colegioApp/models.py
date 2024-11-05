@@ -16,6 +16,8 @@ class Colegio(models.Model):
     cursoMin = models.CharField(max_length=50)
     cursoMax = models.CharField(max_length=50)
     modeloEstudio = models.CharField(max_length=1)
+    Ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE , related_name="colegio")   
+
    
 
    
@@ -24,5 +26,7 @@ class Profesor(models.Model):
     nombre = models.CharField(max_length=100)
     fechaNac = models.DateTimeField()
     antiguedad = models.PositiveIntegerField()
+    colegio = models.ForeignKey(Colegio, on_delete=models.CASCADE , related_name="profesores")   
+
 
    
