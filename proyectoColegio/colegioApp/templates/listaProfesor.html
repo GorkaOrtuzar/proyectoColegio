@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>LISTA DE PROFESORES</title>
+    </head>
+    <body>
+
+        <h1>Lista de Profesores</h1>
+        <ul>
+            {% for profesor in profesor_list%}
+
+                <a href="{% url 'detalleProfesor' profesor.id%}">
+                    Ver detalle de {{ profesor.nombre}}
+                </a>
+        {% endfor %}
+        </ul>
+        
+    </body>
+    
+</html>

@@ -1,2 +1,16 @@
-<h1> {{ colegio.nombre}}</h1>
-<h1> {{ colegio.ubi}}</h1>
+<html>
+    <head>
+        <title>DETALLE DEL COLEGIO</title>
+    </head>
+    
+    <body>
+        <h1>Detalle del Colegio:</h1>
+        <p>Nombre: {{colegio.nombre}}</p>
+        <p>Ubicacion: {{colegio.ubicacion}}</p>
+        <p>Ciudad: {{Colegio.ciudad}}</p>
+        <p>Curso minimo que se imparte: {{colegio.cursoMin}}</p>
+        <p>Curso maximo que se imparte: {{colegio.cursoMax}}</p>
+        <p>Modelo de estudio: {{colegio.modeloEstudio}}</p>
+        <p>Ciudad: {{colegio.ciudad.nombre}}</p>
+    </body>
+</html>

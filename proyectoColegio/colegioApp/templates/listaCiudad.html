@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>LISTA DE CIUDADES</title>
+    </head>
+    <body>
+
+        <h1>Lista de Ciudades</h1>
+        <ul>
+            {% for ciudad in ciudad_list%}
+
+                <a href="{% url 'detalleCiudad' ciudad.id%}">
+                    Ver detalle de {{ ciudad.nombre}}
+                </a>
+        {% endfor %}
+        </ul>
+        
+    </body>
+    
+</html>
+

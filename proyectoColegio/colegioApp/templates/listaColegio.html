@@ -1,8 +1,20 @@
-{% for colegio in colegio_list%}
+<html>
+    <head>
+        <title>LISTA DE COLEGIOS</title>
+    </head>
+    <body>
 
-<h1> {{ colegio.nombre }}</h1>
-<p> {{ colegio.ubi}}</p>
+        <h1>Lista de Colegios</h1>
+        <ul>
+            {% for colegio in colegio_list%}
 
-<a href="{% url 'detalleColes' colegio.id%}">Ver detalle de {{ colegio.nombre}}</a>
+                <a href="{% url 'detalleColes' colegio.id%}">
+                    Ver detalle de {{ colegio.nombre}}
+                </a>
+        {% endfor %}
+        </ul>
+        
+    </body>
+    
+</html>
 
-{% endfor %}
