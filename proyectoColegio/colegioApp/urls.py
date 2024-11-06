@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.index, name='listaC'),
 
 
-    path('listadeCiudades/', views.listaColes, name="listaCiudades"),
+    ##path('listadeCiudades/', views.listaColes, name="listaCiudades"),
 
     ##DESDE AQUI LOS HA HECHO ASIER 
     path('listadeColegios/', views.listaColegioConPlantillas, name="listaColes"),
