@@ -12,7 +12,7 @@ urlpatterns = [
     path('detalleColes/<int:id_colegio>', views.detalleColegioPlantillasAsier, name="detalleColes"),
     ##HASTA AQUI LOS HA HECHO ASIER 
 
-    path('listadeProfesores/', views.listaProfesConPlantillas, name='listaProfes'),
+    path('listadeProfes/', views.listaProfesConPlantillas, name='listaProfes'),
     path('detalleProfes/<int:id_profesor>', views.detalleProfesorConPlantillas, name='detalleProfes'),
 
 

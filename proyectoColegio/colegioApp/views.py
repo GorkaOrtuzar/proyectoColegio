@@ -24,7 +24,6 @@ def index(request):
     contexto = {'profesor': profesor}
     return render(request, 'detalle.html', contexto)
 
-##esta de aqui abajo funciona LAS HA HECHO ASIER 
 ##COLEGIOS
 def listaColegioConPlantillas(request):
     colegios = Colegio.objects.order_by('nombre')
@@ -35,7 +34,6 @@ def detalleColegioPlantillasAsier(request, id_colegio):
     colegio = get_object_or_404(Colegio, pk=id_colegio)
     contexto = {'colegio': colegio}
     return render(request, 'detalleColegio.html', contexto)
-##hasta aqui abajo funciona LAS HA HECHO ASIER 
 
 ##PROFESORES
 def listaProfesConPlantillas(request):
@@ -58,6 +56,7 @@ def detalleCiudadConPlantillas(request, id_ciudad):
     ciudad = get_object_or_404(Ciudad, pk=id_ciudad)
     contexto = {'ciudad': ciudad}
     return render(request, 'detalleCiudad.html', contexto)
+
 
 def detalle(request, nombre_colegio):
     return HttpResponse(f"Consultando el colegio {nombre_colegio}.")
