@@ -55,7 +55,7 @@ def listaCiudadConPlantillas(request):
     return render(request, 'listaCiudad.html', contexto)
 
 def detalleCiudadConPlantillas(request, id_ciudad):
-    ciudad = get_object_or_404(Profesor, pk=id_ciudad)
+    ciudad = get_object_or_404(Ciudad, pk=id_ciudad)
     contexto = {'ciudad': ciudad}
     return render(request, 'detalleCiudad.html', contexto)
 
