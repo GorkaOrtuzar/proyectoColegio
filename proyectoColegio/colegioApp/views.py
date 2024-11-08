@@ -18,7 +18,7 @@ from .models import Colegio,Profesor,Ciudad
 
 
 def index(request):
-    return HTTPResponse('primera vista')
+    return render(request, 'index.html')
 
     profesor = get_object_or_404(Profesor, pk=id_profesor)
     contexto = {'profesor': profesor}
@@ -57,13 +57,7 @@ def detalleCiudadConPlantillas(request, id_ciudad):
     contexto = {'ciudad': ciudad}
     return render(request, 'detalleCiudad.html', contexto)
 
-
-def detalle(request, nombre_colegio):
-    return HttpResponse(f"Consultando el colegio {nombre_colegio}.")
-
-def nosehacerviews(request, id_colegio):
-    return HttpResponse(f"Información del colegio con ID = {id_colegio}.")
-
+##INDEX
 
 
 
