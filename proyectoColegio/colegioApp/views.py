@@ -1,6 +1,8 @@
 from http.client import HTTPResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Colegio,Profesor,Ciudad
+##Modificación segunda entrega --> si no hacemos el import da un warnign de que no esta definido
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -57,7 +59,27 @@ def detalleCiudadConPlantillas(request, id_ciudad):
     contexto = {'ciudad': ciudad}
     return render(request, 'detalleCiudad.html', contexto)
 
-##INDEX
 
+##LISTAS BASADAS EN CLASES
+class DetalleCiudadView(DetailView): ##object
+    model = Ciudad
+    template_name= 'detalleCiudad.html'
+    context_object_name = 'ciudad' ##nombre del contexto
+
+class ListaProfesoresView (ListView): #object_list
+    model = Profesor
+    template_name= 'listaProfesor.html'
+    context_object_name = 'lista_trabajadores'
+    queryset = Profesor.objects.order_by('nombre')
+
+##INVENTADAS POR ASIER
+class detailCoche(DetailView):
+    modelo = Coche
+    template_name = 'detalle_coche.html'
+    context_object_name = 'coche'
+
+class listaCoche(ListView):
+    modelo = Coche
+    template_name = 'list_coche.html'
 
 
