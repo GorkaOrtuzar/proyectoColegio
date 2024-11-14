@@ -1,9 +1,6 @@
-<html>
-    <head>
-        <title>DETALLE DEL COLEGIO</title>
-    </head>
-    
-    <body>
+{% extends 'base.html' %}
+
+{% block contenido %}
         <h1>Detalle del Colegio:</h1>
         <p>Nombre: {{colegio.nombre}}</p>
         <p>Ubicacion: {{colegio.ubi}}</p>
@@ -19,6 +16,5 @@
         {% else %}
 	        <p> No hay imagen disponible para este Colegio. </p>
         {% endif %}
-    </body>
-    
-</html>
+
+{% endblock %}

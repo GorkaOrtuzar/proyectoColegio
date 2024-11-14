@@ -1,9 +1,6 @@
-<html>
-    <head>
-        <title>LISTA DE PROFESORES</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
 
+{% block contenido %}
         <h1>Lista de Profesores</h1>
         <ul>
             {% for profesor in profesor_list%}
@@ -15,6 +12,4 @@
         {% endfor %}
         </ul>
         
-    </body>
-    
-</html>
+{% endblock %}

@@ -1,13 +1,8 @@
-<html>
-    <head>
-        <title>DETALLES DE LA CIUDAD</title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
+{% block contenido %}
         <h1>Detalle de la ciudad:</h1>
         <p>Codigo Postal: {{ciudad.codigoPostal}}</p>
         <p>Provincia: {{ciudad.provincia}}</p>
         <p>Pais: {{ciudad.pais}}</p>
-        
-    </body>
-</html>
+{% endblock %}

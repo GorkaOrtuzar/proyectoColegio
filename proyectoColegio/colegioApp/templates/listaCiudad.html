@@ -1,9 +1,6 @@
-<html>
-    <head>
-        <title>LISTA DE CIUDADES</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
 
+{% block contenido %}
         <h1>Lista de Ciudades</h1>
         <ul>
             {% for ciudad in ciudad_list%}
@@ -14,8 +11,7 @@
                 </a>
         {% endfor %}
         </ul>
-        
-    </body>
-    
-</html>
+{% endblock %}
+
+
 
