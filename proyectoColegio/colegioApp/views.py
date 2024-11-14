@@ -73,13 +73,13 @@ class ListaProfesoresView (ListView): #object_list
     queryset = Profesor.objects.order_by('nombre')
 
 ##INVENTADAS POR ASIER
-class detailCoche(DetailView):
-    modelo = Coche
-    template_name = 'detalle_coche.html'
-    context_object_name = 'coche'
+#class detailCoche(DetailView):
+ #   modelo = Coche
+  #  template_name = 'detalle_coche.html'
+   # context_object_name = 'coche'
 
-class listaCoche(ListView):
-    modelo = Coche
-    template_name = 'list_coche.html'
+#class listaCoche(ListView):
+ #   modelo = Coche
+  #  template_name = 'list_coche.html'
 
 

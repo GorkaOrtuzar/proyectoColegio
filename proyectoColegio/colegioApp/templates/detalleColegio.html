@@ -11,5 +11,14 @@
         <p>Curso minimo que se imparte: {{colegio.cursoMin}}</p>
         <p>Curso maximo que se imparte: {{colegio.cursoMax}}</p>
         <p>Modelo de estudio: {{colegio.modeloEstudio}}</p>
+
+        {% if colegio.imagenColegio %}
+	        <p> Imagen </p>
+            
+	        <img class="misImagenesColegio" src="{{Colegio.imagenColegio}}" alt="Imagen">
+        {% else %}
+	        <p> No hay imagen disponible para este Colegio. </p>
+        {% endif %}
     </body>
+    
 </html>
