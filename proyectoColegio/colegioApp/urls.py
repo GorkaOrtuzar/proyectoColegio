@@ -8,19 +8,19 @@ urlpatterns = [
     ##path('listadeCiudades/', views.listaColes, name="listaCiudades"),
 
     ##DESDE AQUI LOS HA HECHO ASIER 
-    path('listadeColegios/', views.listaColegioConPlantillas, name="listaColegio"),
-    path('detalleColes/<int:id_colegio>', views.detalleColegioPlantillasAsier, name="detalleColes"),
+    path('listadeColegios/', views.listaColegioView.as_view(), name="listaColegio"),
+    path('detalleColes/<int:pk>', views.detalleColegioView.as_view(), name="detalleColes"),
     ##HASTA AQUI LOS HA HECHO ASIER 
 
-    path('listadeProfes/', views.listaProfesConPlantillas, name='listaProfesor'),
-    path('detalleProfes/<int:id_profesor>', views.detalleProfesorConPlantillas, name='detalleProfes'),
+    path('listadeProfes/', views.listaProfesorView.as_view(), name='listaProfesor'),
+    path('detalleProfes/<int:pk>', views.detalleProfesorView.as_view(), name='detalleProfes'),
 
-
-    path('listadeCiudades/', views.listaCiudadConPlantillas, name='listaCiudad'),
-    path('detalleCiudad/<int:id_ciudad>', views.detalleCiudadConPlantillas, name='detalleCiudad'),
+    ##path('listadeCiudades/', views.listaCiudadConPlantillas, name='listaCiudad'),
+    ##path('detalleCiudad/<int:id_ciudad>', views.detalleCiudadConPlantillas, name='detalleCiudad'),
 
     ##DE LAS VISTAS BASADAS EN CLASES
-    path('detalleCiudadView/<int:pk>', views.DetalleCiudadView.as_view(), name='detalleCiudadView'),
+    path('listadeCiudades/', views.listaCiudadView.as_view(), name='listaCiudad'),
+    path('detalleCiudades/<int:pk>', views.detalleCiudadView.as_view(), name='detalleCiudades'),
 
     #INVENTADAS POR ASIER
     #path('listaCoches/', views.listaCoche.as_view(), name='listaCoche'),
