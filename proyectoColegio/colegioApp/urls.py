@@ -20,7 +20,7 @@ urlpatterns = [
 
     ##DE LAS VISTAS BASADAS EN CLASES
     path('listadeCiudades/', views.listaCiudadView.as_view(), name='listaCiudad'),
-    path('detalleCiudades/<int:pk>', views.detalleCiudadView.as_view(), name='detalleCiudades'),
+    path('detalleCiudades/<int:pk>', views.detalleCiudadView.as_view(), name='detalleCiudad'),
 
     #INVENTADAS POR ASIER
     #path('listaCoches/', views.listaCoche.as_view(), name='listaCoche'),
