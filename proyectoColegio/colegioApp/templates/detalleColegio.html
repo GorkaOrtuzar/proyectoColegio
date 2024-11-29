@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-        <h1>Detalle del Colegio:</h1>
-        <p>Nombre: {{colegio.nombre}}</p>
-        <p>Ubicacion: {{colegio.ubi}}</p>
-        <p>Ciudad: {{colegio.Ciudad.nombre}}</p>
-        <p>Curso minimo que se imparte: {{colegio.cursoMin}}</p>
-        <p>Curso maximo que se imparte: {{colegio.cursoMax}}</p>
-        <p>Modelo de estudio: {{colegio.modeloEstudio}}</p>
+        <h1>Ikastolaren xehetasuna:</h1>
+        <p>Izena: {{colegio.nombre}}</p>
+        <p>Kokapena: {{colegio.ubi}}</p>
+        <p>Hiria: {{colegio.Ciudad.nombre}}</p>
+        <p>Ematen den gutxieneko ikastaroa: {{colegio.cursoMin}}</p>
+        <p>Ematen den gehieneko ikastaroa: {{colegio.cursoMax}}</p>
+        <p>Azterketa-eredua: {{colegio.modeloEstudio}}</p>
 
         {% if colegio.imagenColegio %}
 	        <p> Imagen </p>
             
 	        <img class="misImagenesColegio" src="{{Colegio.imagenColegio}}" alt="Imagen">
         {% else %}
-	        <p> No hay imagen disponible para este Colegio. </p>
+	        <p>Ez dago ikastetxe honetarako irudi erabilgarririk. </p>
         {% endif %}
 
 {% endblock %}

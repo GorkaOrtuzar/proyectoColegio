@@ -2,12 +2,12 @@
 
 {% block contenido %}
 
-        <h1>Lista de Colegios</h1>
+        <h1>Ikastolen Zerrenda</h1>
         <ul>
             {% for colegio in colegio_list%}
 
                 <a href="{% url 'detalleColes' colegio.id%}">
-                    Ver detalle de {{ colegio.nombre}}
+                    Ikusi honen xehetasuna: {{ colegio.nombre}}
                     <br><br>
                 </a>
         {% endfor %}

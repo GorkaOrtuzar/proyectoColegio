@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-        <h1>Lista de Ciudades</h1>
+        <h1>Hirien Zerrenda</h1>
         <ul>
             {% for ciudad in ciudad_list%}
 
                 <a href="{% url 'detalleCiudad' ciudad.id%}">
-                    Ver detalle de {{ ciudad.nombre}}
+                    Ikusi honen xehetasuna: {{ ciudad.nombre}}
                     <br><br>
                 </a>
         {% endfor %}

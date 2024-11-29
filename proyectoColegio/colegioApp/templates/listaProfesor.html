@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-        <h1>Lista de Profesores</h1>
+        <h1>Irakasleen Zerrenda</h1>
         <ul>
             {% for profesor in profesor_list%}
 
                 <a href="{% url 'detalleProfes' profesor.id%}">
-                    Ver detalle de {{ profesor.nombre}}
+                    Ikusi honen xehetasuna:  {{ profesor.nombre}}
                     <br><br>
                 </a>
         {% endfor %}
