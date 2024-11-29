@@ -26,7 +26,7 @@ admin.site.register(Colegio, ColegioAdmin)
 class ProfesorAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Datos personales', {'fields': ['dni', 'nombre', 'fechaNac']}),
-        (None, {'fields', ['colegio', 'antiguedad']}),
+        ('Datos adicionales', {'fields': ['colegio', 'antiguedad']}),
         ('Imagen', {'fields': ['imagenProfesor']}),]
     list_display = ('nombre', 'colegio')
 admin.site.register(Profesor, ProfesorAdmin)
