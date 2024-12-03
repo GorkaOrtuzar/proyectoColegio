@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Colegio,Profesor,Ciudad
 ##Modificación segunda entrega --> si no hacemos el import da un warnign de que no esta definido
 from django.views.generic import ListView, DetailView
+from django.utils.translation import gettext as _
+
 
 # Create your views here.
 
@@ -101,3 +103,9 @@ class listaProfesorView (ListView): #object_list
 #class listaCoche(ListView):
  #   modelo = Coche
   #  template_name = 'list_coche.html'
+
+
+
+def index(request):
+    welcome_message = _("Welcome to the multilingual app!")
+    return render(request, 'index.html', {'message': welcome_message})

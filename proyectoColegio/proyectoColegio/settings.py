@@ -105,13 +105,34 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+##CAMBIO
+USE_I18N = True
+USE_L10N = True
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('es', _('Español')),
+    ('eu', _('Euskara')),
+]
+
+LANGUAGE_CODE = 'eu'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+##HASTA AQUI
+
 
 USE_TZ = True
+
+##HECHO CON CHAT
+MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Importante para i18n
+    'django.middleware.csrf.CsrfViewMiddleware',
+]
 
 
 # Static files (CSS, JavaScript, Images)
