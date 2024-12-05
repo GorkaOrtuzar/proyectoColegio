@@ -7,8 +7,7 @@
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <script src="https://kit.fontawesome.com/" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+  <script src="https://kit.fontawesome.com/df45e4add6.js" crossorigin="anonymous"></script>  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
   
  
 </head>
@@ -16,10 +15,10 @@
 <body>
   <div id="main">
     <div id="header">
-      <button class="switch" id="switch">
-        <span><i class="fa-solid fa-sun"></i></span>
-        <span><i class="fa-solid fa-moon"></i></span>
-      </button>
+      <label class="switch">
+        <input type="checkbox" id="input">
+        <span class="slider"></span>
+      </label>
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
@@ -97,8 +96,9 @@
 </body>
 
 <script>
-  const bdark = document.querySelector('#bdark');
-  const body = document.querySelector('#body');
+  const bdark = document.querySelector('#input'); // O el ID correcto de tu input
+  const body = document.body;
+
 
   bdark.addEventListener('click', e=> {
       body.classList.toggle('darkmode');
