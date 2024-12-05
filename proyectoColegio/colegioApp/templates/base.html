@@ -3,30 +3,38 @@
 <html>
 
 <head>
-  <title>{& trans COLEGIOS EUSKADI %}</title>
+  <title>COLEGIOS EUSKADI</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <script src="https://kit.fontawesome.com/" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+  
+ 
 </head>
 
 <body>
   <div id="main">
     <div id="header">
+      <button class="switch" id="switch">
+        <span><i class="fa-solid fa-sun"></i></span>
+        <span><i class="fa-solid fa-moon"></i></span>
+      </button>
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><!--<a href="base.html">--><span class="logo_colour">{% trans EUSKADIKO IKASTOLAK %}</span></a></h1>
-          <h2>{% trans Ikastolen gida bere hirietan %}</h2>
+          <h1><!--<a href="base.html">--><span class="logo_colour">EUSKADIKO IKASTOLAK</span></a></h1>
+          <h2>Ikastolen gida bere hirietan</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href=" {% url 'index' %}">{% trans AURKIBIDE %}</a></li>
-          <li><a href=" {% url 'listaCiudad' %}">{% trans Hirien Zerrenda %}</a></li>
-          <li><a href=" {% url 'listaColegio' %}">{% trans Ikastolen Zerrenda %}</a></li>
-          <li><a href=" {% url 'listaProfesor' %}">{% trans Irakasleen Zerrenda %}</a></li>
+          <li><a href=" {% url 'index' %}">AURKIBIDE</a></li>
+          <li><a href=" {% url 'listaCiudad' %}">Hirien Zerrenda</a></li>
+          <li><a href=" {% url 'listaColegio' %}">Ikastolen Zerrenda</a></li>
+          <li><a href=" {% url 'listaProfesor' %}">Irakasleen Zerrenda</a></li>
+          
         </ul>
       </div>
     </div>
@@ -37,13 +45,11 @@
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
             <!-- insert your sidebar items here -->
-            {% blocktrans %}
             <h3>Azken Albisteak</h3>
             <h4>
               Eusko Jaurlaritzak 15,6 milioi euro bideratuko ditu Etxebarriko institutu berrira
               </h4>
             <h5>2022ko ekainaren 14an, asteartea </h5>
-            {% endblocktrans %}
             <p>El edificio, que lleva un año de retraso, comenzará a construirse a principios de 2023 y albergará 5 líneas de la ESO y 3 de Bachillerato
               .&nbsp;<a href="https://www.elcorreo.com/bizkaia/nervion/nuevo-instituto-etxebarri-20220614162020-nt_amp.html">gehiago irakurri</a></p>
           </div>
@@ -52,7 +58,6 @@
         <div class="sidebar">
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
-            {% blocktrans %}
             <h3>Zuzeneko Estekak</h3>
             <ul>
               <li><a href="https://www.euskadi.eus/eusko-jaurlaritza/-/informazioa/eskolako-agenda-21-jasangarritasunerako-hezi/">Agenda 30</a></li>
@@ -60,8 +65,6 @@
               <li><a href="https://www.euskadi.eus/gobierno-vasco/departamento-educacion/">Hezkuntza Departamentua: Azken eguneraketak</a></li>
               <li><a href="https://www.euskadi.eus/onarpena-haur-lehen-eta-derrigorrezko-bigarren-hezkuntza/web01-a2hikast/eu/">Onarpena eta Matrikulazioa</a></li>
             </ul>
-            {% endblocktrans %}
-
           </div>
           <div class="sidebar_base"></div>
         </div>
@@ -92,4 +95,14 @@
     <p>&nbsp;</p>
   </div>
 </body>
+
+<script>
+  const bdark = document.querySelector('#bdark');
+  const body = document.querySelector('#body');
+
+  bdark.addEventListener('click', e=> {
+      body.classList.toggle('darkmode');
+  });
+
+</script>
 </html>

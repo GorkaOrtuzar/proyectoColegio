@@ -109,11 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 USE_I18N = True
 USE_L10N = True
 
-LANGUAGES = [
-    ('en', _('English')),
-    ('es', _('Español')),
-    ('eu', _('Euskara')),
-]
+
 
 LANGUAGE_CODE = 'eu'
 
@@ -126,14 +122,6 @@ LOCALE_PATHS = [
 
 
 USE_TZ = True
-
-##HECHO CON CHAT
-MIDDLEWARE = [
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.locale.LocaleMiddleware',  # Importante para i18n
-    'django.middleware.csrf.CsrfViewMiddleware',
-]
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
