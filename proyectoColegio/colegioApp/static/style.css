@@ -332,27 +332,54 @@ table tr td
   color: #47433F;
   border-top: 1px solid #FFF;}
 
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+body.dark #header {
+  background-color: #111;
+}
+
+body.dark a, body.dark a:hover {
+  color: #40D8FE; /* Enlaces visibles en modo oscuro */
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+  color: white; /* Colores de encabezados en blanco */
+}
+
+body.dark #header {
+  background-color: #222; /* Fondo más oscuro para el encabezado */
+}
+
+body.dark #site_content {
+  background-color: #111; /* Fondo más oscuro para el contenido */
+}
+
+body.dark .sidebar {
+  background-color: #222; /* Fondo oscuro para la barra lateral */
+  color: #FFF; /* Texto blanco en la barra lateral */
+}
+
+body.dark .sidebar_item {
+  background-color: #333; /* Fondo de los ítems de la barra lateral */
+  color: #FFF; /* Texto blanco */
+}
+
+body.dark #footer {
+  background-color: #222; /* Fondo oscuro para el pie de página */
+  color: #CCC; /* Texto gris claro */
+}
 
 .switch{
   margin-left: 20px;
   top: 20px;
   position: relative;
   display: inline-block;
-
 }
-
-body.dark{
-  background-color: #000;
-  color: white;
-}
-
-.sidebar.dark{
-  background: #333;
-  color: #FFF;
-}
-
 .switch input{
-  opacity: 0;
+  opacity: 1;
   width: 0;
   height: 0;
 }
