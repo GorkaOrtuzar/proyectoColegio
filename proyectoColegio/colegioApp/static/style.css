@@ -346,6 +346,11 @@ body.dark{
   color: white;
 }
 
+.sidebar.dark{
+  background: #333;
+  color: #FFF;
+}
+
 .switch input{
   opacity: 0;
   width: 0;
@@ -385,7 +390,6 @@ input:checked+.slider{
 input:focus+.slider{
   box-shadow: 0 0 1px #333;
 }
-
 
 input:checked+.slider::before{
   -webkit-transform: translateX(26px);
