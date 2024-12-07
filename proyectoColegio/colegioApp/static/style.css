@@ -367,6 +367,21 @@ body.dark .sidebar_item {
   color: #FFF; /* Texto blanco */
 }
 
+body.dark .content_header {
+  background-color: #333; /* Fondo de los ítems de la barra lateral */
+  color: #FFF; /* Texto blanco */
+}
+
+body.dark .sidebar_top {
+  background-color: #333; /* Fondo de los ítems de la barra lateral */
+  color: #FFF; /* Texto blanco */
+}
+
+body.dark .sidebar_container {
+  background-color: #333; /* Fondo de los ítems de la barra lateral */
+  color: #FFF; /* Texto blanco */
+}
+
 body.dark #footer {
   background-color: #222; /* Fondo oscuro para el pie de página */
   color: #CCC; /* Texto gris claro */
