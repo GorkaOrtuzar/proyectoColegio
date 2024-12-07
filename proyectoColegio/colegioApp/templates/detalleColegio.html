@@ -10,9 +10,8 @@
         <p>Azterketa-eredua: {{colegio.modeloEstudio}}</p>
 
         {% if colegio.imagenColegio %}
-	        <p> Imagen </p>
-            
-	        <img class="misImagenesColegio" src="{{Colegio.imagenColegio}}" alt="Imagen">
+	<p> Imagen :</p>
+	        <img class="misImagenesColegio" src="{{colegio.imagenColegio}}" alt="Imagen">
         {% else %}
 	        <p>Ez dago ikastetxe honetarako irudi erabilgarririk. </p>
         {% endif %}

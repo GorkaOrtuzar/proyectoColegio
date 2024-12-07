@@ -8,5 +8,11 @@
         <p>Jaiotze data: {{profesor.fechaNac}}</p>
         <p>Antzinatasuna: {{profesor.antiguedad}}</p>
         <p>Ikastola: {{profesor.colegio}}</p>
+        {% if profesor.imagenProfesor %}
+        <p> Imagen: </p>
+                <img class="misImagenesProfesor" src="{{profesor.imagenProfesor}}" alt="Imagen">
+        {% else %}
+                <p>Ez dago irakasle honetarako irudi erabilgarririk. </p>
+        {% endif %}
 
 {% endblock %}
